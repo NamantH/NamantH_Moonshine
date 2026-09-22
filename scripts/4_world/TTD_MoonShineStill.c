@@ -1,7 +1,7 @@
 modded class TTD_MoonShineStill extends ItemBase
 {
-	private string m_WhatShine;
-	private string m_WhatBottle;
+	protected string m_WhatShine;
+	protected string m_WhatBottle;
 	
 	override void EEItemAttached( EntityAI item, string slot_name )
 	{
@@ -10,6 +10,7 @@ modded class TTD_MoonShineStill extends ItemBase
 		Print(m_WhatShine);
 	}
 
+	ref array<string> m_AllowedCargo = {"TTD_Pumpkin_MoonShine","NamantH_Honey_Moonshine","NamantH_Marmalade_Moonshine","NamantH_Peach_Moonshine","NamantH_Pear_Moonshine","NamantH_Plum_Moonshine","NamantH_Potato_Moonshine","NamantH_Rice_Moonshine","NamantH_Apple_Moonshine"};
 
 	override void hiShine()
 	{
@@ -49,12 +50,12 @@ modded class TTD_MoonShineStill extends ItemBase
 					break;
 			}
 			Print(m_WhatBottle);
-			EntityAI item1 = this.GetInventory().CreateInInventory(m_WhatBottle);
-			EntityAI item2 = this.GetInventory().CreateInInventory(m_WhatBottle);
-			EntityAI item3 = this.GetInventory().CreateInInventory(m_WhatBottle);
-			EntityAI item4 = this.GetInventory().CreateInInventory(m_WhatBottle);
-			EntityAI item5 = this.GetInventory().CreateInInventory(m_WhatBottle);
-			EntityAI item6 = this.GetInventory().CreateInInventory(m_WhatBottle);
+			EntityAI MoonShine1 = this.GetInventory().CreateInInventory(m_WhatBottle);
+			EntityAI MoonShine2 = this.GetInventory().CreateInInventory(m_WhatBottle);
+			EntityAI MoonShine3 = this.GetInventory().CreateInInventory(m_WhatBottle);
+			EntityAI MoonShine4 = this.GetInventory().CreateInInventory(m_WhatBottle);
+			EntityAI MoonShine5 = this.GetInventory().CreateInInventory(m_WhatBottle);
+			EntityAI MoonShine6 = this.GetInventory().CreateInInventory(m_WhatBottle);
 			removeMash();
 			GetCompEM().SwitchOff();
 		}
